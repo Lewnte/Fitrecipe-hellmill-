@@ -1,0 +1,12 @@
+workflows:
+  android-flavors:
+    name: Android APK (Lite+Pro)
+    environment:
+      flutter: stable
+    scripts:
+      - flutter pub get
+      - flutter build apk --flavor lite -t lib/main_lite.dart --release --split-per-abi
+      - flutter build apk --flavor pro  -t lib/main_pro.dart  --release --split-per-abi
+    artifacts:
+      - build/app/outputs/flutter-apk/*literelease.apk
+      - build/app/outputs/flutter-apk/*prorelease.apk
