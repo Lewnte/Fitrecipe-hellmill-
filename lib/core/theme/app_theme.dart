@@ -11,7 +11,7 @@ class AppTheme {
       scaffoldBackgroundColor: bg,
       colorScheme: ColorScheme.fromSeed(seedColor: accent, brightness: Brightness.dark),
       appBarTheme: const AppBarTheme(backgroundColor: bg, centerTitle: true),
-      cardTheme: const CardTheme(color: surface, shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16)))),
+      cardTheme: const CardThemeData(color: surface, shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16)))),
     );
   }
 }
