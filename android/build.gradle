@@ -1,0 +1,20 @@
+// ROOT: android/build.gradle (csak akkor használd, ha nincs sajátod – egy flutter create projekt felülírja)
+buildscript {
+    ext.kotlin_version = '1.9.25'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.4.2'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:' + ext.kotlin_version
+        // classpath 'com.google.gms:google-services:4.4.2' // ha Firebase kell
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}

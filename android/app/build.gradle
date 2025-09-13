@@ -1,0 +1,51 @@
+// android/app/build.gradle
+plugins {
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+    id "dev.flutter.flutter-gradle-plugin"
+    // id "com.google.gms.google-services" // ha Firebase kell
+}
+
+android {
+    namespace "com.fitrecipe.hellmill"
+    compileSdkVersion 34
+
+    defaultConfig {
+        applicationId "com.fitrecipe.hellmill"
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 103
+        versionName "1.0.3"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.debug // cseréld release-re ha van keystore
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    flavorDimensions "tier"
+    productFlavors {
+        lite {
+            dimension "tier"
+            applicationIdSuffix ".lite"
+            resValue "string", "app_name", "Fitrecipe – Hellmill Lite"
+        }
+        pro {
+            dimension "tier"
+            applicationIdSuffix ".pro"
+            resValue "string", "app_name", "Fitrecipe – Hellmill Pro"
+        }
+    }
+}
+
+dependencies {
+    implementation "androidx.multidex:multidex:2.0.1"
+}

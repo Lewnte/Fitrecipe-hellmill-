@@ -1,0 +1,1 @@
+iOS buildhez nyisd meg Xcode-dal a Runner-t egy flutter create után. Ez a csomag iOS-t nem generál automatikusan.
